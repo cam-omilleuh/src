@@ -42,11 +42,11 @@
             </tr>
             <?php foreach ($employees as $emp) { ?>
                 <tr>
-                    <td><a href="fiche.php?emp_no=<?= urlencode($emp['emp_no']) ?>"><?= $emp['emp_no'] ?></a></td>
-                    <td><?= $emp['first_name'] ?></td>
-                    <td><?= $emp['last_name'] ?></td>
-                    <td><?= $emp['gender'] ?></td>
-                    <td><?= $emp['hire_date'] ?></td>
+                    <th><a href="fiche.php?emp_no=<?= urlencode($emp['emp_no']) ?>"><?= $emp['emp_no'] ?></a></th>
+                    <th><?= $emp['first_name'] ?></th>
+                    <th><?= $emp['last_name'] ?></th>
+                    <th><?= $emp['gender'] ?></th>
+                    <th><?= $emp['hire_date'] ?></th>
                 </tr>
             <?php } ?>
         </table>

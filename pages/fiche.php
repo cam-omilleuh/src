@@ -33,24 +33,24 @@
             <button type="button">Modifier l'employé</button>
         </a></p>
         <table border="1">
-            <tr><th>N°</th>              <td><?= $employee['emp_no'] ?></td></tr>
-            <tr><th>Prénom</th>          <td><?= $employee['first_name'] ?></td></tr>
-            <tr><th>Nom</th>             <td><?= $employee['last_name'] ?></td></tr>
-            <tr><th>Genre</th>           <td><?= $employee['gender'] ?></td></tr>
-            <tr><th>Date de naissance</th><td><?= $employee['birth_date'] ?></td></tr>
-            <tr><th>Date d'embauche</th> <td><?= $employee['hire_date'] ?></td></tr>
-            <tr><th>Poste actuel</th>    <td><?= $employee['title'] ?? '—' ?></td></tr>
-            <tr><th>Département</th>      <td><?= $employee['dept_name'] ?? '—' ?></td></tr>
-            <tr><th>Salaire actuel</th>  <td><?= isset($employee['salary']) ? number_format($employee['salary'], 0, ',', ' ') . ' €' : '—' ?></td></tr>
+            <tr><th>N°</th>              <th><?= $employee['emp_no'] ?></th></tr>
+            <tr><th>Prénom</th>          <th><?= $employee['first_name'] ?></th></tr>
+            <tr><th>Nom</th>             <th><?= $employee['last_name'] ?></th></tr>
+            <tr><th>Genre</th>           <th><?= $employee['gender'] ?></th></tr>
+            <tr><th>Date de naissance</th><th><?= $employee['birth_date'] ?></th></tr>
+            <tr><th>Date d'embauche</th> <th><?= $employee['hire_date'] ?></th></tr>
+            <tr><th>Poste actuel</th>    <th><?= $employee['title'] ?? '—' ?></th></tr>
+            <tr><th>Département</th>      <th><?= $employee['dept_name'] ?? '—' ?></th></tr>
+            <tr><th>Salaire actuel</th>  <th><?= isset($employee['salary']) ? number_format($employee['salary'], 0, ',', ' ') . ' €' : '—' ?></th></tr>
             <tr><th>Emploi le plus long</th>
-                <td>
+                <th>
                     <?php if ($longest_title) { ?>
                         <?= $longest_title['title'] ?>
                         (<?= round($longest_title['duree_jours'] / 365, 1) ?> ans,
                         du <?= $longest_title['from_date'] ?>
                         au <?= $longest_title['to_date'] === '9999-01-01' ? 'en cours' : $longest_title['to_date'] ?>)
                     <?php } else { echo '—'; } ?>
-                </td>
+                </th>
             </tr>
         </table>
 
@@ -63,9 +63,9 @@
             </tr>
             <?php foreach ($title_history as $t) { ?>
                 <tr>
-                    <td><?= $t['title'] ?></td>
-                    <td><?= $t['from_date'] ?></td>
-                    <td><?= $t['to_date'] === '9999-01-01' ? 'en cours' : $t['to_date'] ?></td>
+                    <th><?= $t['title'] ?></th>
+                    <th><?= $t['from_date'] ?></th>
+                    <th><?= $t['to_date'] === '9999-01-01' ? 'en cours' : $t['to_date'] ?></th>
                 </tr>
             <?php } ?>
         </table>
@@ -79,9 +79,9 @@
             </tr>
             <?php foreach ($salary_history as $s) { ?>
                 <tr>
-                    <td><?= number_format($s['salary'], 0, ',', ' ') ?> €</td>
-                    <td><?= $s['from_date'] ?></td>
-                    <td><?= $s['to_date'] === '9999-01-01' ? 'en cours' : $s['to_date'] ?></td>
+                    <th><?= number_format($s['salary'], 0, ',', ' ') ?> €</th>
+                    <th><?= $s['from_date'] ?></th>
+                    <th><?= $s['to_date'] === '9999-01-01' ? 'en cours' : $s['to_date'] ?></th>
                 </tr>
             <?php } ?>
         </table>

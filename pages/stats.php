@@ -20,11 +20,11 @@
         </tr>
         <?php foreach ($stats as $row) { ?>
             <tr>
-                <td><?= $row['title'] ?></td>
-                <td><?= $row['nb_hommes'] ?></td>
-                <td><?= $row['nb_femmes'] ?></td>
-                <td><?= $row['nb_total'] ?></td>
-                <td><?= number_format($row['salaire_moyen'], 0, ',', ' ') ?> €</td>
+                <th><?= $row['title'] ?></th>
+                <th><?= $row['nb_hommes'] ?></th>
+                <th><?= $row['nb_femmes'] ?></th>
+                <th><?= $row['nb_total'] ?></th>
+                <th><?= number_format($row['salaire_moyen'], 0, ',', ' ') ?> €</th>
             </tr>
         <?php } ?>
     </table>

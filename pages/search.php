@@ -16,13 +16,21 @@
 <html>
     <head>
         <title>Recherche d'employés</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <nav class="navbar">
+        
+
     <p><a href="index.php">&larr; Retour aux départements</a></p>
+    </nav>
+    <div class="container">
     <h1>Recherche d'employés</h1>
+    <div class="card">
 
     <form method="get" action="search.php">
         <p>
+        <div class="form-group">
             Département :
             <select name="dept_no">
                 <option value="">— Tous —</option>
@@ -33,8 +41,8 @@
                 <?php } ?>
             </select>
         </p>
-        <p>Nom de l'employé : <input type="text" name="name" value="<?= htmlspecialchars($name) ?>"></p>
-        <p>Âge min : <input type="number" name="age_min" value="<?= htmlspecialchars($age_min) ?>"></p>
+        <p><div class="form-group">Nom de l'employé : <input type="text" name="name" value="<?= htmlspecialchars($name) ?>"></div></p>
+        <p><div class="form-group"></div>Âge min : <input type="number" name="age_min" value="<?= htmlspecialchars($age_min) ?>"></p>
         <p>Âge max : <input type="number" name="age_max" value="<?= htmlspecialchars($age_max) ?>"></p>
         <p><input type="submit" value="Rechercher"></p>
     </form>
@@ -52,15 +60,17 @@
             </tr>
             <?php foreach ($results as $emp) { ?>
                 <tr>
-                    <td><a href="fiche.php?emp_no=<?= urlencode($emp['emp_no']) ?>"><?= $emp['emp_no'] ?></a></td>
-                    <td><?= $emp['first_name'] ?></td>
-                    <td><?= $emp['last_name'] ?></td>
-                    <td><?= $emp['gender'] ?></td>
-                    <td><?= $emp['age'] ?></td>
-                    <td><?= $emp['dept_name'] ?></td>
+                    <th><a href="fiche.php?emp_no=<?= urlencode($emp['emp_no']) ?>"><?= $emp['emp_no'] ?></a></th>
+                    <th><?= $emp['first_name'] ?></th>
+                    <th><?= $emp['last_name'] ?></th>
+                    <th><?= $emp['gender'] ?></th>
+                    <th><?= $emp['age'] ?></th>
+                    <th><?= $emp['dept_name'] ?></th>
                 </tr>
             <?php } ?>
         </table>
     <?php } ?>
+    </div>
+    </div>
     </body>
 </html>
