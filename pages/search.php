@@ -42,9 +42,9 @@
             </select>
         </p>
         <p><div class="form-group">Nom de l'employé : <input type="text" name="name" value="<?= htmlspecialchars($name) ?>"></div></p>
-        <p><div class="form-group"></div>Âge min : <input type="number" name="age_min" value="<?= htmlspecialchars($age_min) ?>"></p>
-        <p>Âge max : <input type="number" name="age_max" value="<?= htmlspecialchars($age_max) ?>"></p>
-        <p><input type="submit" value="Rechercher"></p>
+        <p><div class="form-group"></div>Âge min : <input type="number" name="age_min" value="<?= htmlspecialchars($age_min) ?>"></div></p>
+        <p><div class="form-group">Âge max : <input type="number" name="age_max" value="<?= htmlspecialchars($age_max) ?>"></div></p>
+        <p><div class="form"</div><input type="submit" value="Rechercher"></p>
     </form>
 
     <?php if ($submitted) { ?>
